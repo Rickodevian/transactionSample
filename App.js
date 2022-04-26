@@ -14,13 +14,24 @@ import {
   StyleSheet,
   useColorScheme,
 } from 'react-native';
+import CodePush from 'react-native-code-push';
+const CODE_PUSH_OPTIONS = {
+  checkFrequency: CodePush.CheckFrequency.ON_APP_START,
+};
 
-import {
-  Colors,
-} from 'react-native/Libraries/NewAppScreen';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 import Transaction from './src/Screens/Transaction/Transaction';
 
-const App: () => Node = (props) => {
+const App: () => Node = props => {
+  React.useEffect(() => {
+    CodePush.sync(
+      {installMode: CodePush.InstallMode.IMMEDIATE},
+      syncWithCodePush,
+    );
+  }, []);
+  const syncWithCodePush = status => {
+    console.log('Codepush sync status', status);
+  };
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
@@ -58,4 +69,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default CodePush(CODE_PUSH_OPTIONS)(App);
