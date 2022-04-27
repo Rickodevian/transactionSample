@@ -10,7 +10,8 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "codepush:staging": "appcenter CodePush release-react -a rickodevian/Testing -d Staging"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",

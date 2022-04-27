@@ -42,7 +42,7 @@ const App: () => Node = props => {
   return (
     <SafeAreaView style={{...backgroundStyle, ...styles.container}}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <Text>This is how many times the text was changed: 1</Text>
+      <Text>This is how many times the text was changed: 2</Text>
     </SafeAreaView>
   );
 };
