@@ -17,12 +17,8 @@ const Main = () => (
   <NavigationContainer>
     <Stack.Navigator>
       <Stack.Screen
-        name="Transaction"
+        name="Home"
         component={App}
-      />
-      <Stack.Screen
-        name="Transaction Detail"
-        component={TransactionDetail}
       />
     </Stack.Navigator>
   </NavigationContainer>

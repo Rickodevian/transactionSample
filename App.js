@@ -13,6 +13,7 @@ import {
   StatusBar,
   StyleSheet,
   useColorScheme,
+  Text
 } from 'react-native';
 import CodePush from 'react-native-code-push';
 const CODE_PUSH_OPTIONS = {
@@ -41,7 +42,7 @@ const App: () => Node = props => {
   return (
     <SafeAreaView style={{...backgroundStyle, ...styles.container}}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <Transaction {...props} />
+      <Text>This is how many times the text was changed: 0</Text>
     </SafeAreaView>
   );
 };
